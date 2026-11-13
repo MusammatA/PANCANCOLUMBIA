@@ -48,7 +48,7 @@ export async function ChapterStory() {
         </div>
       </div>
       <a id="join-pancan" className={styles.joinLink} href={joinUrl}>
-        <Editable k="home.join.label">Join PanCAN</Editable> <span aria-hidden="true">→</span>
+        <Editable k="home.join.label">Join PanCAN</Editable>
       </a>
       <div className={styles.linkEdit}>
         <EditableHref k="home.join.url" fallback={JOIN_URL} label="Edit Join PanCAN link" />

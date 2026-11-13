@@ -24,7 +24,7 @@ export async function PageBlocks({ page }: { page: BlockPage }) {
                 {renderParagraphs(block.body)}
                 {block.button_label && block.button_url && (
                   <a className="block-button" href={block.button_url} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
-                    {block.button_label} <span aria-hidden="true">→</span>
+                    {block.button_label}
                   </a>
                 )}
               </div>

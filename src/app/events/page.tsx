@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { AddEventButton, EventToolbar } from '@/components/admin/event-admin';
 import { Editable } from '@/components/editable';
-import { PageBanner } from '@/components/page-banner';
 import { PageBlocks } from '@/components/page-blocks';
 import { getEvents, getSiteData, type EventItem } from '@/lib/content';
 import styles from './events.module.css';
@@ -23,7 +22,7 @@ export default async function Events() {
 
   return (
     <>
-      <PageBanner k="events.title">Events</PageBanner>
+      <h1 className="sr-only">Events</h1>
 
       {(upcoming.length > 0 || admin) && (
         <section className={styles.upcoming} aria-label="Upcoming events">

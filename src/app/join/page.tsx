@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Editable, EditableHref } from '@/components/editable';
-import { PageBanner } from '@/components/page-banner';
 import { PageBlocks } from '@/components/page-blocks';
 import { getText } from '@/lib/content';
 import styles from './join.module.css';
@@ -45,7 +44,7 @@ export default async function Join() {
 
   return (
     <>
-      <PageBanner k="join.title">Join</PageBanner>
+      <h1 className="sr-only">Join</h1>
       <section className={styles.forms} aria-label="Ways to get involved">
         <ul className={styles.grid}>
           {forms.map(({ slug, name, description, action, url }, i) => (
@@ -53,7 +52,7 @@ export default async function Join() {
               <Editable k={`join.${slug}.name`} as="h2">{name}</Editable>
               <Editable k={`join.${slug}.description`} as="p" multiline>{description}</Editable>
               <a className={styles.button} href={urls[i]} target="_blank" rel="noopener noreferrer">
-                <Editable k={`join.${slug}.action`}>{action}</Editable> <span aria-hidden="true">↗</span>
+                <Editable k={`join.${slug}.action`}>{action}</Editable>
               </a>
               <EditableHref k={`join.${slug}.url`} fallback={url} label="Edit form link" />
             </li>

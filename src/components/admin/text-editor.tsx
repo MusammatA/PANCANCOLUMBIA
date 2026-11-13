@@ -77,7 +77,7 @@ export function EditableClient({ k, value, fallback, multiline, as, className, c
           setOpen(true);
         }}
       >
-        ✎
+        <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M4 20h4L19 9l-4-4L4 16v4z" /><path d="M13.5 6.5l4 4" /></svg>
       </button>
       {open && <TextEditorModal k={k} value={value} fallback={fallback} multiline={multiline} onClose={() => setOpen(false)} />}
     </Tag>
@@ -89,7 +89,7 @@ export function LinkEditButton({ k, value, fallback, label = 'Edit link' }: { k:
   const [open, setOpen] = useState(false);
   return (
     <>
-      <button type="button" className="admin-chip" onClick={() => setOpen(true)}>🔗 {label}</button>
+      <button type="button" className="admin-chip" onClick={() => setOpen(true)}>{label}</button>
       {open && <TextEditorModal k={k} value={value} fallback={fallback} multiline={false} label={label} onClose={() => setOpen(false)} />}
     </>
   );

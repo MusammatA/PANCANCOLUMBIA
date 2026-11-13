@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Editable } from '@/components/editable';
-import { PageBanner } from '@/components/page-banner';
 import { PageBlocks } from '@/components/page-blocks';
 import { getText } from '@/lib/content';
 import { boardMembers, site } from '@/lib/site';
@@ -16,7 +15,7 @@ export default async function Contact() {
 
   return (
     <>
-      <PageBanner k="contact.title">Contact</PageBanner>
+      <h1 className="sr-only">Contact</h1>
 
       <section className={styles.org} aria-label="Email us">
         <Editable k="contact.org.title" as="h2">Email Us</Editable>

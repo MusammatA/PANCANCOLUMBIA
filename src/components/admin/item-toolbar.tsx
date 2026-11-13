@@ -25,7 +25,7 @@ export function ItemToolbar({ label, onEdit, onMove, onDelete, first, last }: {
 
   return (
     <div className="item-toolbar" aria-label={`${label} controls`}>
-      <button type="button" onClick={onEdit} disabled={pending}>✎ Edit</button>
+      <button type="button" onClick={onEdit} disabled={pending}>Edit</button>
       <button type="button" onClick={() => act(() => onMove(-1))} disabled={pending || first} aria-label="Move earlier">↑</button>
       <button type="button" onClick={() => act(() => onMove(1))} disabled={pending || last} aria-label="Move later">↓</button>
       <button

@@ -29,9 +29,9 @@ Without Supabase settings, the site still runs and shows its built-in text and e
 
 Once logged in, board members see:
 
-- ✎ next to every piece of text: click it to change the wording (or "Restore original").
+- A pencil button next to every piece of text: click it to change the wording (or "Restore original").
 - "Edit link" chips under buttons that go to other sites (Join PanCAN, the Google Forms).
-- On Events: "+ Add an event", plus Edit / ↑ / ↓ / Delete on each event. Tick "Show as an upcoming event" to feature it at the top.
+- On Events: "+ Add an event", plus Edit / up / down / Delete on each event. Tick "Show as an upcoming event" to feature it at the top.
 - On every page: "+ Add a text box", with four designs (White card, Purple panel, Lavender band, Highlight), an optional photo and an optional button.
 - A purple bar at the bottom with Admins (add or remove who can log in) and Log out.
 
@@ -70,7 +70,7 @@ In text: a blank line starts a new paragraph, `**bold**` makes bold, `[link text
    - `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` (the publishable / "anon" key; never the secret or service_role key)
 3. Deploy. Then go to **Board Login** on the live site, enter your name and board email, and type in the emailed code.
 
-For local testing, put the same two lines in `.env.local` (copy `.env.example`) and restart `npm run dev`.
+For local testing, put the same two lines in a file named `.env.local` in the project folder (never committed) and restart `npm run dev`.
 
 ## Security notes
 

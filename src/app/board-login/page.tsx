@@ -24,7 +24,7 @@ export default async function BoardLogin() {
           <div className="login-card">
             <h2>You’re logged in</h2>
             <p className="login-lead">
-              Signed in as <strong>{admin.name || admin.email}</strong> ({admin.email}). Open any page and press ✎ next to text to change it, or use the
+              Signed in as <strong>{admin.name || admin.email}</strong> ({admin.email}). Open any page and press the pencil button next to text to change it, or use the
               buttons to add events and text boxes.
             </p>
             <div className="login-links">
