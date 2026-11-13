@@ -39,6 +39,7 @@ export async function requestCode(nameInput: string, emailInput: string): Promis
     options: { shouldCreateUser: true, data: { name } },
   });
   if (error) {
+    console.error('Board login: sending code failed', { status: error.status, code: error.code, message: error.message });
     return {
       ok: false,
       error:
@@ -79,7 +80,10 @@ export async function verifyCode(codeInput: string): Promise<VerifyCodeResult> {
 
   const supabase = await createClient();
   const { error } = await supabase.auth.verifyOtp({ email: pending.email, token: code, type: 'email' });
-  if (error) return { ok: false, error: 'That code isn’t right, or it has expired.' };
+  if (error) {
+    console.error('Board login: code check failed', { status: error.status, code: error.code, message: error.message });
+    return { ok: false, error: 'That code isn’t right, or it has expired.' };
+  }
 
   cookieStore.delete(PENDING_COOKIE);
   await supabase.auth.updateUser({ data: { name: pending.name } });
