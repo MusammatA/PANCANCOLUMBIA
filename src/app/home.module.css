@@ -1,0 +1,88 @@
+.about {
+  margin: clamp(28px, 5vw, 72px) var(--gutter) 0;
+  padding: clamp(20px, 4vw, 52px);
+  border: 1px solid #dacbe3;
+  border-top: 4px solid var(--purple);
+  background: white;
+}
+
+.about h2 {
+  color: var(--purple);
+  margin-bottom: 1.25rem;
+}
+
+.about p + p {
+  margin-top: 1rem;
+}
+
+.about a {
+  color: var(--purple);
+  text-decoration: underline;
+  text-underline-offset: .16em;
+}
+
+.board {
+  margin-top: clamp(3rem, 6vw, 5rem);
+  padding: clamp(2.75rem, 5vw, 4.5rem) var(--gutter);
+  background: var(--lavender);
+}
+
+.boardInner {
+  width: 100%;
+}
+
+.board h2 {
+  margin-bottom: clamp(1.75rem, 3vw, 2.75rem);
+  color: var(--purple);
+  text-align: center;
+}
+
+.boardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.75rem, 3vw, 3rem) clamp(1rem, 3vw, 2.25rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.boardGrid img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.boardGrid figcaption {
+  padding-top: .85rem;
+  border-top: 3px solid var(--purple);
+}
+
+.boardGrid h3 {
+  color: var(--purple);
+  font-size: clamp(1.25rem, 2.1vw, 1.65rem);
+}
+
+.boardGrid p {
+  margin-top: .3rem;
+  color: var(--muted);
+  font-size: .875rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 1200px) {
+  .boardGrid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .boardGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 360px) {
+  .boardGrid {
+    grid-template-columns: 1fr;
+  }
+}

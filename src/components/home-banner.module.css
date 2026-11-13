@@ -1,0 +1,185 @@
+.banner {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: end center;
+  min-height: clamp(290px, 32vw, 470px);
+  overflow: hidden;
+  background: #d6b6eb;
+}
+
+.bannerPhoto {
+  position: absolute;
+  z-index: -1;
+  inset-block: 0;
+  inset-inline: 0;
+  margin-inline: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  opacity: .53;
+}
+
+.bannerCaption {
+  max-width: 100%;
+  padding: 1rem 1rem clamp(18px, 2.8vw, 40px);
+  text-align: center;
+  color: var(--purple);
+}
+
+.bannerCaption h1 {
+  display: inline-block;
+  padding: .25em .55em;
+  background: rgb(255 255 255 / 94%);
+  font-size: clamp(18px, 2.55vw, 40px);
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+.bannerCaption .tagline {
+  width: fit-content;
+  margin: .5rem auto 0;
+  padding: .2rem .65rem;
+  background: rgb(249 241 253 / 92%);
+  font-size: clamp(9px, .85vw, 12px);
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.story {
+  padding: clamp(20px, 3.3vw, 52px) var(--gutter);
+  background: white;
+}
+
+.panels {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(12px, 1.5vw, 24px);
+}
+
+.photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+}
+
+.photo {
+  display: block;
+  height: auto;
+}
+
+.portrait {
+  position: relative;
+  margin: 0;
+}
+
+.joinLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: min(100%, 21rem);
+  min-height: 4rem;
+  margin: clamp(1.5rem, 3vw, 2.75rem) auto 0;
+  padding: .9rem 1.25rem;
+  border-radius: .75rem;
+  background: var(--purple);
+  color: white;
+  box-shadow: 0 3px 0 #300749, 0 6px 14px rgb(73 14 111 / 18%);
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  font-weight: 700;
+  letter-spacing: .12em;
+  line-height: 1.25;
+  text-transform: uppercase;
+  transition: background-color .16s, box-shadow .16s;
+}
+
+.joinLink > span[aria-hidden] {
+  font-size: 1.5em;
+  line-height: 1;
+}
+
+.joinLink:hover,
+.joinLink:focus-visible {
+  background: #62238b;
+  box-shadow: 0 3px 0 #300749, 0 8px 18px rgb(73 14 111 / 25%);
+}
+
+.joinLink:active {
+  background: #380b55;
+  box-shadow: inset 0 2px 3px rgb(0 0 0 / 20%);
+}
+
+.mission {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(14px, 4cqi, 28px);
+  container-type: inline-size;
+  padding: clamp(24px, 7cqi, 64px) clamp(20px, 7cqi, 72px);
+  background: var(--purple);
+  color: white;
+}
+
+.title {
+  font-size: clamp(15px, 4.6cqi, 22px);
+  text-wrap: balance;
+  text-align: center;
+}
+
+.card {
+  font-size: clamp(15px, 4.4cqi, 18px);
+  line-height: 1.6;
+}
+
+@media (max-width: 800px) {
+  .panels {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Wide screens: portrait keeps its shape, the mission panel fills the rest of the row. */
+@media (min-width: 801px) {
+  .panels {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+    align-items: stretch;
+  }
+
+  /* Photo matches the purple panel's height instead of forcing it taller. */
+  .photo {
+    height: 100%;
+    min-height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+    object-position: 50% 60%;
+  }
+
+  .portrait {
+    position: relative;
+  }
+
+  .portrait .photo {
+    position: absolute;
+    inset: 0;
+  }
+
+  .title {
+    font-size: clamp(15px, 2.6cqi, 26px);
+  }
+
+  .card {
+    font-size: clamp(16px, 2.2cqi, 24px);
+  }
+}
+
+.linkEdit {
+  display: flex;
+  justify-content: center;
+  margin-top: .75rem;
+}
+
+.linkEdit:empty {
+  display: none;
+}

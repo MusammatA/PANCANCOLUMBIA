@@ -1,0 +1,129 @@
+/* Text boxes board members add to pages. Four designs, all built from the site's palette. */
+.page-blocks {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  margin: clamp(2.5rem, 5vw, 4.5rem) 0;
+}
+
+.block {
+  position: relative;
+  margin-inline: var(--gutter);
+}
+
+.block-inner {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  align-items: center;
+}
+
+.has-image .block-inner {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+}
+
+.block-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 28rem;
+  object-fit: cover;
+}
+
+.block-text h2 {
+  margin-bottom: .9rem;
+}
+
+.block-text p + p {
+  margin-top: 1rem;
+}
+
+.block-text a:not(.block-button) {
+  text-decoration: underline;
+  text-underline-offset: .16em;
+}
+
+.block-button {
+  display: inline-flex;
+  align-items: center;
+  gap: .75rem;
+  margin-top: 1.4rem;
+  padding: .8rem 1.4rem;
+  border-radius: .6rem;
+  background: var(--purple);
+  color: white;
+  box-shadow: 0 3px 0 #300749;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.block-button:hover {
+  background: #62238b;
+}
+
+/* White card */
+.block-card {
+  padding: clamp(20px, 4vw, 52px);
+  border: 1px solid #dacbe3;
+  border-top: 4px solid var(--purple);
+  background: white;
+}
+
+.block-card h2 {
+  color: var(--purple);
+}
+
+/* Purple panel */
+.block-purple {
+  padding: clamp(24px, 4vw, 56px);
+  background: var(--purple);
+  color: white;
+}
+
+.block-purple .block-button {
+  background: white;
+  color: var(--purple);
+  box-shadow: 0 3px 0 #c9b2d8;
+}
+
+.block-purple .block-button:hover {
+  background: var(--lavender);
+}
+
+/* Lavender band: runs edge to edge */
+.block-lavender {
+  margin-inline: 0;
+  padding: clamp(2.75rem, 5vw, 4.5rem) var(--gutter);
+  background: var(--lavender);
+}
+
+.block-lavender:not(.has-image) .block-text {
+  text-align: center;
+}
+
+.block-lavender h2 {
+  color: var(--purple);
+}
+
+/* Highlight */
+.block-quote {
+  padding: .5rem 0 .5rem clamp(1.25rem, 3vw, 2.5rem);
+  border-left: 6px solid #c08ee0;
+}
+
+.block-quote h2 {
+  color: var(--purple);
+}
+
+.block-quote .block-text p {
+  color: var(--purple);
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+@media (max-width: 720px) {
+  .has-image .block-inner {
+    grid-template-columns: 1fr;
+  }
+}
